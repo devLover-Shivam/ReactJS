@@ -295,3 +295,184 @@ npm run preview
 * Commit code regularly using Git.
 
 
+## How React Renders Your Application
+
+When a React application starts, three important files work together:
+
+```text
+index.html
+    ↓
+main.jsx
+    ↓
+App.jsx
+```
+
+Let's understand how these files are connected.
+
+---
+
+### Step 1: `index.html`
+
+The browser first loads the `index.html` file.
+
+```html
+<body>
+  <div id="root"></div>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+```
+
+#### What Happens Here?
+
+* The browser creates an empty `<div>` with the id `root`.
+* It then loads the `main.jsx` file.
+* At this point, nothing is visible on the screen because the `root` div is empty.
+
+Think of the `root` div as an empty container waiting for React to inject content.
+
+---
+
+### Step 2: `main.jsx`
+
+The `main.jsx` file acts as the entry point of the React application.
+
+```jsx
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+
+ReactDOM.createRoot(
+  document.getElementById("root")
+).render(
+  <App />
+);
+```
+
+#### What Happens Here?
+
+1. React finds the element with id `root`.
+2. React creates a React Root.
+3. React renders the `App` component inside that root.
+
+In simple words:
+
+```text
+main.jsx
+      ↓
+Loads App.jsx
+      ↓
+Injects it into the root div
+```
+
+---
+
+### Step 3: `App.jsx`
+
+The `App` component contains the UI that we want to display.
+
+```jsx
+function App() {
+  return (
+    <div>
+      <h1>Hello</h1>
+      <h2>Kaise Ho?</h2>
+    </div>
+  );
+}
+
+export default App;
+```
+
+This component is imported by `main.jsx` and rendered inside the `root` div.
+
+---
+
+## Complete Flow
+
+### Files
+
+#### index.html
+
+```html
+<div id="root"></div>
+<script type="module" src="/src/main.jsx"></script>
+```
+
+#### main.jsx
+
+```jsx
+import App from "./App.jsx";
+
+ReactDOM.createRoot(
+  document.getElementById("root")
+).render(
+  <App />
+);
+```
+
+#### App.jsx
+
+```jsx
+function App() {
+  return <h1>Hello React</h1>;
+}
+
+export default App;
+```
+
+---
+
+## What the Browser Finally Sees
+
+Initially:
+
+```html
+<div id="root"></div>
+```
+
+After React renders:
+
+```html
+<div id="root">
+  <h1>Hello React</h1>
+</div>
+```
+
+---
+
+## Visual Representation
+
+```text
+index.html
+┌─────────────────────┐
+│ <div id="root">     │
+│ </div>              │
+└──────────┬──────────┘
+           │
+           ▼
+
+main.jsx
+┌─────────────────────┐
+│ import App          │
+│ render(<App />)     │
+└──────────┬──────────┘
+           │
+           ▼
+
+App.jsx
+┌─────────────────────┐
+│ <h1>Hello React</h1>│
+└──────────┬──────────┘
+           │
+           ▼
+
+Browser Output
+┌─────────────────────┐
+│ Hello React         │
+└─────────────────────┘
+```
+
+---
+
+
+
