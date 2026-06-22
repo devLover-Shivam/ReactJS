@@ -250,3 +250,106 @@ export default ComponentName
 
 ---
 
+# Code Reusability with React Components
+
+React components enhance code reusability by allowing you to build UI elements once and reuse them across your application. Instead of duplicating the same markup in multiple places, you create a component and use it wherever needed. This reduces redundancy, makes maintenance easier, and ensures consistency.
+
+---
+
+## Example: Reusable Navbar
+
+Imagine an application with multiple pages—Home, Products, and Cart—all displaying the same navigation bar.
+
+### Without Components (Redundant Code)
+
+Each page repeats the same navbar code:
+
+```jsx
+function Home() {
+  return (
+    <div>
+      <nav>
+        <h1>MyApp</h1>
+      </nav>
+      <h2>Home Page</h2>
+    </div>
+  );
+}
+
+function Products() {
+  return (
+    <div>
+      <nav>
+        <h1>MyApp</h1>
+      </nav>
+      <h2>Products Page</h2>
+    </div>
+  );
+}
+```
+
+If you need to change the navbar (e.g., update the title), you'd have to edit every file that contains it.
+
+---
+
+### With Components (Reusable Code)
+
+By creating a single `Navbar` component, you define the navbar once and reuse it everywhere:
+
+```jsx
+// Navbar.jsx
+function Navbar() {
+  return (
+    <nav>
+      <h1>MyApp</h1>
+    </nav>
+  );
+}
+
+export default Navbar;
+```
+
+Now you can use this component across all pages:
+
+```jsx
+// Home.jsx
+import Navbar from "./Navbar";
+
+function Home() {
+  return (
+    <div>
+      <Navbar />
+      <h2>Home Page</h2>
+    </div>
+  );
+}
+
+// Products.jsx
+import Navbar from "./Navbar";
+
+function Products() {
+  return (
+    <div>
+      <Navbar />
+      <h2>Products Page</h2>
+    </div>
+  );
+}
+```
+
+If you decide to change the navbar (e.g., change "MyApp" to "MyApp 2.0"), you only update `Navbar.jsx`. All pages using `<Navbar />` reflect the change automatically.
+
+---
+
+## Benefits of Reusability
+
+1. **Consistency**: The UI remains consistent across different parts of the application.
+2. **Easy Maintenance**: A change in one component updates all its usages.
+3. **Less Code Duplication**: You avoid repeating the same HTML/JSX, reducing bugs and making the codebase smaller.
+4. **Logical Organization**: Components break down the UI into manageable, reusable parts, making development modular and organized.
+
+---
+
+
+
+
