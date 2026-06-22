@@ -16,5 +16,11 @@ Real DOM vs Virtual DOM
        ↓
       JSX
        ↓
+Setting Up React Using Vite
+       ↓
+   Components
+       ↓
+     Props
+       ↓
 Upcoming Sections
 ```
