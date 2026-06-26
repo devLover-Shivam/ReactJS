@@ -22,5 +22,9 @@ Setting Up React Using Vite
        ↓
      Props
        ↓
+Styling with CSS
+       ↓
+Intro to Tailwind CSS
+       ↓
 Upcoming Sections
 ```
