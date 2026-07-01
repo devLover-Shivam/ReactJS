@@ -26,5 +26,9 @@ Styling with CSS
        ↓
 Intro to Tailwind CSS
        ↓
-Upcoming Sections
+   Functions
+       ↓
+     Hooks
+       ↓
+State Management- useState
 ```
