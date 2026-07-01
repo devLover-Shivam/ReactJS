@@ -1,36 +1,10 @@
-# React Hooks - Complete Guide with Real-Life Analogies and Practical Examples
+# React Hooks
 
 > Hooks are one of the biggest reasons why modern React is so powerful and enjoyable to work with.
 >
 > Before Hooks, developers had to write **Class Components** to use state, lifecycle methods, and many advanced React features. Hooks brought all of those capabilities into **Functional Components**, making React applications easier to write, understand, and maintain.
 
 ---
-
-# Table of Contents
-
-- What are Hooks?
-- Why were Hooks introduced?
-- Life Before Hooks
-- Rules of Hooks
-- Types of Hooks
-- Understanding State
-- `useState`
-- State Updates
-- Why State Updates are Asynchronous
-- Functional Updates
-- Two-way Data Binding
-- `useEffect`
-- Dependency Array
-- Cleanup Function
-- API Fetching
-- LocalStorage
-- Real Life Analogies
-- Common Mistakes
-- Best Practices
-- Summary
-
----
-
 # What are Hooks?
 
 Hooks are **special functions provided by React** that allow Functional Components to use features like:
