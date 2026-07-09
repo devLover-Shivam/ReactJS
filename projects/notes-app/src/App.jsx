@@ -1,11 +1,18 @@
 import React from "react";
 import bgImage from "./assets/notes-bg.jpeg";
+import { useState } from "react";
 
 const App = () => {
+  const [title,setTitle] = useState('');
+  const[details,setDetails] = useState('');
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("Form Submitted");
+    console.log(title,details);
+    setTitle('')
+    setDetails('')
   };
+
+
 
   return (
     <div className="min-h-screen bg-[#081A12] px-6 py-10 flex flex-col lg:flex-row items-center justify-center gap-10">
@@ -44,7 +51,7 @@ const App = () => {
         >
           Notes
         </h1>
-
+{/* PEHLA INPUT FOR HEADING */}
         <input
           type="text"
           placeholder="Enter Notes Heading"
@@ -69,11 +76,18 @@ const App = () => {
             focus:ring-4
             focus:ring-[#B8A66A40]
           "
+
+          value={title}
+          onChange={(e)=>{
+            setTitle(e.target.value)
+          }}
+
+
           style={{
             fontFamily: '"Helvetica Neue", Inter, sans-serif',
           }}
         />
-
+{/* DETAILED WALA INPUT */}
         <textarea
           placeholder="Enter Details"
           className="
@@ -101,6 +115,11 @@ const App = () => {
           "
           style={{
             fontFamily: '"Helvetica Neue", Inter, sans-serif',
+          }}
+
+          value={details}
+          onChange={(e)=>{
+            setDetails(e.target.value)
           }}
         />
 
