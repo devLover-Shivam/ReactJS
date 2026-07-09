@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* Smooth page rendering */
+html,
+body {
+    background: #081A12;
+    scroll-behavior: smooth;
+}
+
+/* Ripple Button */
+
+.wave-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 9999px;
+    background: rgba(255,255,255,.22);
+    transform: translate(-50%, -50%);
+}
+
+.wave-btn:active::after {
+    animation: ripple .6s ease-out;
+}
+
+@keyframes ripple {
+
+    from{
+        width:0;
+        height:0;
+        opacity:1;
+    }
+
+    to{
+        width:600px;
+        height:600px;
+        opacity:0;
+    }
+
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #567d5d;
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #73997a;
+}
