@@ -5,9 +5,12 @@ import { useState } from "react";
 const App = () => {
   const [title,setTitle] = useState('');
   const[details,setDetails] = useState('');
+  const[task,setTask] = useState([]);
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(title,details);
+    const copyTask = [...task];
+    copyTask.push({title,details});
+    console.log(copyTask);
     setTitle('')
     setDetails('')
   };
