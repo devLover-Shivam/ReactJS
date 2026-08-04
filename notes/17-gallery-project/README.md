@@ -6,7 +6,7 @@ A simple React application that fetches images from the **Picsum Photos API** an
 
 ---
 
-## 🚀 Features
+## Features
 
 - Fetches images from the Picsum Photos API.
 - Displays images in a responsive gallery layout.
