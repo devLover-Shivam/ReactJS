@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+h1{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    font-size: 70px;
+    font-weight: 600px;
+    text-transform: capitalize;
+}
