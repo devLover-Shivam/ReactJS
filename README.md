@@ -47,4 +47,8 @@ State Management- useState
    React Router DOM
        ↓
    Advanced Routing
+       ↓
+   Context API
+       ↓
+      End
 ```
