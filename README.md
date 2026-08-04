@@ -43,4 +43,8 @@ State Management- useState
    UseEffect Hook
        ↓
    Gallery Project
+       ↓
+   React Router DOM
+       ↓
+   Advanced Routing
 ```
