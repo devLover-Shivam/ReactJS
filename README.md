@@ -31,4 +31,16 @@ Intro to Tailwind CSS
      Hooks
        ↓
 State Management- useState
+       ↓
+   Form Handling
+       ↓
+   Two-Way-Binding
+       ↓
+   Local Storage
+       ↓
+   API Calling
+       ↓
+   UseEffect Hook
+       ↓
+   Gallery Project
 ```
